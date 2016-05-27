@@ -33,11 +33,11 @@
 .shadowed {
     -webkit-filter: drop-shadow(10px 5px 10px rgba(0,0,0,0.5));
     filter: url(#drop-shadow);
-    }
+}
 .shadowed:hover
 {
-    position: relative;
+    /*position: relative;
     top: -8px;
-    -webkit-transform: rotate(-20deg);
-
+    -webkit-transform: rotate(-20deg);*/
+    -webkit-transform: scale(1.2);
 }
