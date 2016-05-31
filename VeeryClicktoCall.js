@@ -29,10 +29,10 @@ SIPml.init(readyCallback, errorCallback);
  */
 
 document.write(
-    "<a href='#'  id='c2c_btn_call_2' onclick='clickTocall()' style='position:fixed; z-index:98; top: 35%; right: 0px; -moz-transform: rotate(-90deg);background-image:url('veery_callus.svg')' disabled><img id='veeryImg' class= 'veerybird' src='img/veery_callus.svg' width='70px' height='70px'/></a>"
+    "<a href='#'  id='c2c_btn_call_2' onclick='clickTocall()' style='position:fixed; z-index:98; top: 35%; right: 0px; -moz-transform: rotate(-90deg);background-image:url('veery_callus.svg')'><img id='veeryImg' class= 'veerybird' src='img/veery_callus.svg' width='70px' height='70px'/></a>"
 );
 
-
+document.getElementById("c2c_btn_call_2").disabled = true;
 
 
 function EventListener(e) {
@@ -47,6 +47,7 @@ function EventListener(e) {
     if(e.type == 'started'){
         // successfully started the stack.
         // register();
+        document.getElementById("c2c_btn_call_2").disabled = false;
 
         //alert(e.type);
     } if(e.type == 'stopped'){
