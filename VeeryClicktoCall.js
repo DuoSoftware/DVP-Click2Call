@@ -143,7 +143,7 @@ function makeCall(ext) {
 function hangupCall() { // call this function to hangup /reject a call.
     if(callSession) {
         callSession.hangup(); // hangups outgoing call.
-        callSession==null;
+        //callSession==null;
     }
 }
 
