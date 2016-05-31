@@ -29,7 +29,7 @@ SIPml.init(readyCallback, errorCallback);
  */
 
 document.write(
-    "<a href='#'  id='c2c_btn_call_2' onclick='clickTocall()' style='position:fixed; z-index:98; top: 35%; right: 0px; -moz-transform: rotate(-90deg);background-image:url('veery_callus.svg')'><img id='veeryImg' class= 'veerybird' src='img/veery_callus.svg' width='70px' height='70px'/></a>"
+    "<a href='#'  id='c2c_btn_call_2' onclick='clickTocall()' style='position:fixed; z-index:98; top: 35%; right: 0px; -moz-transform: rotate(-90deg);background-image:url('veery_callus.svg')' disabled><img id='veeryImg' class= 'veerybird' src='img/veery_callus.svg' width='70px' height='70px'/></a>"
 );
 
 
@@ -47,6 +47,13 @@ function EventListener(e) {
     if(e.type == 'started'){
         // successfully started the stack.
         // register();
+
+        //alert(e.type);
+    } if(e.type == 'stopped'){
+        // successfully started the stack.
+        // register();
+        document.getElementById('veeryImg').src="img/veery_callus.svg";
+        callSession = null;
 
         //alert(e.type);
     } else if(e.type == 'i_new_call'){
@@ -73,9 +80,7 @@ function EventListener(e) {
         }
     } else if(e.type == 'connecting') {
 
-        /*if(e.session == registerSession) {
-         // registering session.
-         } else*/ if(e.session == callSession) {
+         if(e.session == callSession) {
             // connecting outgoing call.
             document.getElementById('veeryImg').src="img/veery_ringing.svg";
         } else if(e.session == incomingCallSession) {
@@ -141,6 +146,7 @@ function makeCall(ext) {
 }
 
 function hangupCall() { // call this function to hangup /reject a call.
+    document.getElementById('veeryImg').src="img/veery_callus.svg";
     if(callSession) {
         callSession.hangup(); // hangups outgoing call.
         //callSession==null;
