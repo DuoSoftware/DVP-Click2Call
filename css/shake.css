@@ -1,0 +1,21 @@
+@-webkit-keyframes thumb {
+    0% { -webkit-transform: scale(1); }
+    50% { -webkit-transform: scale(0.9); }
+    100% { -webkit-transform: scale(1); }
+}
+/*@-webkit-keyframes thumb {
+    0% { -webkit-transform: rotate(-20deg); }
+    25% { -webkit-transform: rotate(-10deg); }
+    50% { -webkit-transform: rotate(0deg); }
+    75% { -webkit-transform: rotate(10deg); }
+    100% { -webkit-transform: rotate(20deg); }
+}*/
+
+.veerybird:hover
+{
+    -webkit-animation-name: thumb;
+    -webkit-animation-duration: 150ms;
+    -webkit-transform-origin:50% 50%;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
