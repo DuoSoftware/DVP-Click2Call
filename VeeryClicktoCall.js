@@ -136,7 +136,7 @@ function createSipStack() {
 }
 
 function makeCall(ext) {
-    callSession = sipStack.newSession('call-audiovideo', {
+    callSession = sipStack.newSession('call-audio', {
         /* audio and video will not be played if you didnt give values to audio_remote,video_remote and for video_local. */
         audio_remote: document.getElementById('audio_remote'),
         events_listener: { events: '*', listener: EventListener }
